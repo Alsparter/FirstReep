@@ -1,8 +1,11 @@
 import os
 from typing import Dict, List
 
-# OpenAI Configuration
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your-openai-api-key-here")
+# AI Configuration
+# Using Free Local AI Models - No API Keys Required!
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "llama2")  # Free Ollama model
+HUGGINGFACE_MODEL = os.getenv("HUGGINGFACE_MODEL", "microsoft/DialoGPT-large")  # Free HF model
 
 # Available Roles for Interview
 INTERVIEW_ROLES = {

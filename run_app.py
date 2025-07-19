@@ -59,7 +59,8 @@ def run_streamlit():
     print("🚀 Starting AI Interview System...")
     print("📝 The application will open in your default web browser")
     print("🎤 Make sure to grant camera and microphone permissions when prompted")
-    print("🔑 Don't forget to set your OpenAI API key in the .env file")
+    print("🤖 Using FREE AI models - no API keys required!")
+    print("💡 For best performance, run: python setup_ollama.py first")
     print("-" * 60)
     
     try:
@@ -95,9 +96,14 @@ def main():
     # Check other key dependencies
     missing_deps = []
     try:
-        import openai
+        import transformers
     except ImportError:
-        missing_deps.append('openai')
+        missing_deps.append('transformers')
+    
+    try:
+        import torch
+    except ImportError:
+        missing_deps.append('torch')
     
     try:
         import cv2

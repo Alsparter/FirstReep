@@ -12,9 +12,9 @@ def test_imports():
         from config import INTERVIEW_ROLES, AI_PERSONALITIES, SCORING_CRITERIA
         print(f"✅ Config loaded: {len(INTERVIEW_ROLES)} roles, {len(AI_PERSONALITIES)} personalities")
         
-        # Test AI services (without actual API calls)
+        # Test AI services (free models)
         from ai_services import AIInterviewer, SpeechProcessor, AnswerScorer
-        print("✅ AI services imported successfully")
+        print("✅ Free AI services imported successfully")
         
         # Test video recorder
         from video_recorder import VideoRecorder, FaceDetector
@@ -100,9 +100,10 @@ def main():
     if all_tests_passed:
         print("🎉 All tests passed! The application is ready to run.")
         print("\n📝 To start the application:")
-        print("1. Set up your OpenAI API key in .env file")
+        print("1. (Optional) Set up Ollama for best performance: python setup_ollama.py")
         print("2. Run: python run_app.py")
         print("   or: streamlit run app.py")
+        print("🆓 No API keys required - completely FREE to use!")
     else:
         print("❌ Some tests failed. Please check the errors above.")
     

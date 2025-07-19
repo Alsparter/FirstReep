@@ -30,7 +30,7 @@ A comprehensive voice-to-text AI interviewer application that conducts role-base
 
 - Python 3.8+
 - Webcam and microphone
-- OpenAI API key
+- **NO API keys required!** 🎉 (Uses free AI models)
 
 ### Installation
 
@@ -45,10 +45,11 @@ A comprehensive voice-to-text AI interviewer application that conducts role-base
    pip install -r requirements.txt
    ```
 
-3. **Set up environment variables**
+3. **Set up FREE AI (Optional but recommended)**
    ```bash
-   cp .env.example .env
-   # Edit .env file and add your OpenAI API key
+   python setup_ollama.py
+   # This installs Ollama for the best free AI experience
+   # If you skip this, the app will use Hugging Face models automatically
    ```
 
 4. **Run the application**
@@ -62,14 +63,19 @@ A comprehensive voice-to-text AI interviewer application that conducts role-base
 
 ## 🔧 Configuration
 
-### Environment Variables
+### AI Configuration
 
-Create a `.env` file with the following:
+**🎉 NO API KEYS REQUIRED!** The system uses completely free AI models:
 
-```bash
-OPENAI_API_KEY=your-openai-api-key-here
-OPENAI_MODEL=gpt-3.5-turbo  # Optional
-```
+1. **Ollama (Recommended)** - Local, private, fast AI models
+   - Run `python setup_ollama.py` for automatic setup
+   - Models run completely offline after download
+   - Best performance and privacy
+
+2. **Hugging Face (Automatic Fallback)** - Free cloud models  
+   - No setup required, works immediately
+   - Slower but requires zero configuration
+   - Automatically used if Ollama isn't available
 
 ### Available Roles
 
@@ -139,7 +145,7 @@ Each answer is evaluated across 5 criteria:
 ### Key Technologies
 
 - **Streamlit**: Web interface and user interaction
-- **OpenAI GPT**: Question generation and answer scoring
+- **Ollama + Hugging Face**: FREE AI models (no API costs!)
 - **Speech Recognition**: Voice-to-text conversion
 - **pyttsx3**: Text-to-speech synthesis
 - **OpenCV**: Video recording and face detection
@@ -166,10 +172,10 @@ Each answer is evaluated across 5 criteria:
 - Check system audio input settings
 - Ensure stable internet connection for Google Speech API
 
-**OpenAI API errors:**
-- Verify your API key is correct
-- Check your OpenAI account has sufficient credits
-- Ensure internet connectivity
+**AI model errors:**
+- For Ollama: Ensure service is running (`ollama serve`)
+- For Hugging Face: Check internet connectivity
+- Try running: `python setup_ollama.py` for better performance
 
 **Installation issues:**
 - Use Python 3.8+ (some libraries may not work with older versions)
@@ -190,9 +196,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🙏 Acknowledgments
 
-- OpenAI for GPT models
-- Streamlit for the amazing web framework
-- Open source libraries that make this project possible
+- **Ollama** for making AI accessible and free for everyone
+- **Hugging Face** for the amazing free model ecosystem  
+- **Streamlit** for the incredible web framework
+- **Open source community** for making this project possible
 
 ---
 
