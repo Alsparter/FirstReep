@@ -1,0 +1,9 @@
+HR ATTRITION INSIGHTS REPORT
+============================================================
+Generated on: 2025-07-19 18:02:25
+
+Key Findings:
+- Total Employees: 2,000
+- Overall Attrition Rate: 15.3%
+- Highest Risk Department: Customer Service (18.6%)
+- Most Critical Age Group: Under 25 (14.3%)
